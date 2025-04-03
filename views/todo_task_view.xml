@@ -1,0 +1,66 @@
+<odoo>
+    <record id="view_Todo_task_tree" model="ir.ui.view">
+        <field name="name">Todo Task Tree</field>
+        <field name="model">todo.task</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="assign_to"/>
+                <field name="status"/>
+                <field name="date"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_Todo_task_search" model="ir.ui.view">
+        <field name="name">ToDo Search</field>
+        <field name="model">todo.task</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="assign_to"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_Todo_task_form" model="ir.ui.view">
+        <field name="name">ToDo Form</field>
+        <field name="model">todo.task</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <field name="status" widget="statusbar" options="{'clickable': 1}"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="assign_to"/>
+                            <field name="date"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_todo_task" model="ir.actions.act_window">
+        <field name="name">All Task</field>
+        <field name="res_model">todo.task</field>
+    </record>
+
+    <menuitem
+            id="menu_property_management"
+            name="To Do Task"
+            parent="menu_todo_root"
+            action="action_todo_task"
+    />
+</odoo>
