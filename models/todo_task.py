@@ -16,3 +16,4 @@ class TodoTask(models.Model):
         ('in progress', 'In progress'),
         ('completed', 'Completed'),
     ])
+    active = fields.Boolean(default=True)

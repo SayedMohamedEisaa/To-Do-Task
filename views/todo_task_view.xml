@@ -8,6 +8,7 @@
                 <field name="assign_to"/>
                 <field name="status"/>
                 <field name="date"/>
+                <field name="active" invisible="1"/>
                 <field name="description"/>
             </tree>
         </field>
@@ -39,6 +40,7 @@
                             <field name="assign_to"/>
                             <field name="date"/>
                             <field name="description"/>
+                            <field name="active" invisible="1"/>
                         </group>
                     </group>
                 </sheet>
